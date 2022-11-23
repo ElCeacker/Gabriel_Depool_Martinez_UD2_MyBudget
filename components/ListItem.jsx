@@ -17,6 +17,9 @@ const ListItem = ({ transaction, removeTransaction, edit, transactionList, miSal
     const [ newDescription, setNewDescription ] = useState(transaction.description);
     const [ calendar, setCalendar ] = useState(transaction.date);
 
+    const [ minimumDate, setMinimumDate ] = useState(`${new Date().getFullYear() - 10}/01/01`);
+    const [ maximumDate, setMaximumDate ] = useState(`${new Date().getFullYear() + 10}/12/31`);
+
     const changeNewValueHandler = (value) => {
         setNewTransactionValue(value)
     }
@@ -90,6 +93,9 @@ const ListItem = ({ transaction, removeTransaction, edit, transactionList, miSal
                                         <DatePicker
                                             mode="calendar"
                                             onDateChange={selectedTime => setCalendar(selectedTime)}
+                                            selected={calendar}
+                                            minimumDate={minimumDate}
+                                            maximumDate={maximumDate}
                                             />
                                         </View>
                                         <View>
