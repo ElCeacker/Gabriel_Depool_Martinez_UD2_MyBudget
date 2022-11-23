@@ -117,7 +117,7 @@ const ListItem = ({ transaction, removeTransaction, edit, transactionList, miSal
                 </View>
             </View>
             <Modal
-                animationType="slide"
+                animationType="fade"
                 transparent={true}
                 visible={modalVisible}
                 onRequestClose={() => {
